@@ -246,7 +246,29 @@
   .seg button svg{width:15px;height:15px}
   .seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(20,20,26,.1)}
   .seg.icons button{padding:8px 12px}
-  .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:16px;padding:6px 26px 8px}
+  .mystats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:2px}
+  @media(max-width:760px){.mystats{grid-template-columns:1fr}}
+  .pp{display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;gap:8px 20px;align-items:center;height:100%}
+  .pp-av{grid-row:1;width:58px;height:58px;border-radius:50%;overflow:hidden;display:block}
+  .pp-id{grid-row:1}
+  .pp-id b{font-size:21px;font-weight:800;letter-spacing:-.02em;display:block}
+  .pp-id span{font-size:13.5px;color:var(--muted);font-weight:500}
+  .pp-ring{grid-row:1/3;grid-column:3;width:118px;height:118px;align-self:center}
+  .pp-chips{grid-row:2;grid-column:1/3;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:860px){.pp{grid-template-columns:auto 1fr}.pp-ring{display:none}.pp-chips{grid-column:1/3}}
+  .ms{border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;gap:13px;align-items:center}
+  .ms .mi{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
+  .ms .mi svg{width:21px;height:21px}
+  .ms .mv{font-family:var(--f-mono);font-size:19px;font-weight:700;letter-spacing:-.02em}
+  .ms .mv small{color:var(--soft);font-size:13px;font-weight:600}
+  .ms .ml{font-size:11.5px;color:var(--muted);margin-top:1px}
+  .ms .msub{height:5px;background:#eee;border-radius:5px;margin-top:6px;overflow:hidden;width:100%}
+  .ms .msub i{display:block;height:100%;background:var(--gold);border-radius:5px}
+  .mini-rate{display:inline-flex;align-items:center;gap:4px;font-family:var(--f-mono);font-size:11.5px;font-weight:700;color:var(--gold-deep)}
+  .mini-rate svg{width:11px;height:11px;fill:currentColor}
+  .topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:6px 26px 8px}
+  @media(max-width:1180px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.topic-grid{grid-template-columns:1fr}}
   .tcard{border:1px solid var(--line);border-radius:var(--r2);padding:20px;cursor:pointer;transition:.18s;display:flex;flex-direction:column;gap:12px;background:#fff}
   .tcard:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(20,20,26,.09);border-color:var(--line2)}
   .tcard .tic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center}
@@ -544,6 +566,8 @@
   <symbol id="i-tg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.1 2.9 11.2c-.9.4-.9 1.6.1 1.9l4.6 1.4 1.8 5.6c.3.9 1.4 1 1.9.3l2.6-3.1 4.8 3.5c.7.5 1.7.1 1.9-.8l2.4-14.3c.2-1.1-.8-1.9-1.6-1.6ZM8.7 14l9.3-7.4-7.5 8.3-.2 3-1.6-3.9Z"/></symbol>
   <symbol id="i-head" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 17v1a3 3 0 0 1-3 3h-3"/></symbol>
   <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4v1a4 4 0 0 0 4 4M17 5h3v1a4 4 0 0 1-4 4"/><path d="M12 13v3M8 20h8M10 16h4v4h-4z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s1 2.5-1 5c-1.4 1.7-3 3-3 5.5A4.5 4.5 0 0 0 12.5 18 4.5 4.5 0 0 0 17 13.5c0-1.6-.7-2.7-1.5-3.5 0 0-.3 1.5-1.5 2 .3-2.5-.5-6-2-9Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
   <symbol id="p-man" viewBox="0 0 100 100"><circle cx="50" cy="34" r="17" fill="#2b2b30"/><path d="M18 96c0-20 14-31 32-31s32 11 32 31" fill="#2b2b30"/><path d="M36 27c2-9 26-9 28 0l-3 6c-2-6-20-6-22 0z" fill="#1c1c20"/></symbol>
   <symbol id="p-cap" viewBox="0 0 100 100"><circle cx="50" cy="36" r="16" fill="#2b2b30"/><path d="M33 31c0-8 8-13 17-13s17 5 17 13l-2 2H35Z" fill="#111114"/><path d="M32 31h38l3 4H30Z" fill="#0c0c0f"/><path d="M18 96c0-20 14-30 32-30s32 10 32 30" fill="#2b2b30"/></symbol>
 </defs></svg>
@@ -567,7 +591,7 @@
 
   <div class="main">
     <div class="topbar">
-      <div class="search"><svg><use href="#i-search"/></svg><input id="searchInput" placeholder="Поиск по курсам, темам и авторам…"></div>
+      <div class="search"><svg><use href="#i-search"/></svg><input id="searchInput" placeholder="Умный поиск по всем разделам..."></div>
       <div class="pill-green"><svg><use href="#i-star"/></svg> Безлимитный доступ</div>
       <div class="uwrap" id="uwrap">
         <div class="user" id="userBtn"><span class="av" id="userAv"></span> Константин <svg><use href="#i-chev"/></svg></div>
@@ -585,12 +609,29 @@
       <div class="panel">
         <div class="home-top">
           <div class="home-left">
-            <div class="greet">
-              <h1>С возвращением, Константин</h1>
-              <p>Лента собрана под вас: что продолжить, что нового и что по вашим темам</p>
+            <div class="pp">
+              <span class="pp-av" id="ppAv"></span>
+              <div class="pp-id">
+                <b>Константин Волков</b>
+                <span>Собственник</span>
+              </div>
+              <div class="pp-chips">
+                <div class="ms"><div><div class="mv">2</div><div class="ml">пройдено курсов</div></div></div>
+                <div class="ms"><div><div class="mv">28</div><div class="ml">всего курсов</div></div></div>
+                <div class="ms">
+                  <span class="mi" style="background:#fdeede;color:#d9721f"><svg><use href="#i-flame"/></svg></span>
+                  <div><div class="mv">6 <small>дней</small></div><div class="ml">серия заходов</div></div>
+                </div>
+              </div>
+              <svg class="pp-ring" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#ececf0" stroke-width="12"/>
+                <circle cx="60" cy="60" r="48" fill="none" stroke="url(#ppg)" stroke-width="12" stroke-linecap="round"
+                  stroke-dasharray="302" stroke-dashoffset="280.9" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="ppg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#F4C24A"/><stop offset="1" stop-color="#E0A92E"/></linearGradient></defs>
+                <text x="60" y="70" text-anchor="middle" font-size="26" font-weight="800" fill="#16161a" font-family="Inter,sans-serif">7%</text>
+              </svg>
             </div>
-            <div class="rail-head" style="margin-top:0"><h2>Продолжить</h2></div>
-            <div class="rail" id="rail-continue"></div>
           </div>
           <div class="rating-card">
             <div class="rh"><b><svg><use href="#i-trophy"/></svg> Рейтинг сотрудников</b><span>ТОП-5</span></div>
@@ -598,7 +639,11 @@
             <a class="to-team" data-go="team">К команде →</a>
           </div>
         </div>
-        <div class="chips" data-filter="home" style="margin-top:12px">
+        <div class="rail-wrap" style="padding-top:14px;padding-bottom:0">
+          <div class="rail-head" style="margin-top:0"><h2>Продолжить изучать</h2></div>
+          <div class="rail" id="rail-continue"></div>
+        </div>
+        <div class="chips" data-filter="home" style="margin-top:14px">
           <button class="chip on" data-mode="all">Все</button>
           <button class="chip" data-mode="watch"><svg><use href="#i-watch"/></svg> Смотреть</button>
           <button class="chip" data-mode="listen"><svg><use href="#i-listen"/></svg> Слушать</button>
@@ -606,7 +651,7 @@
         </div>
         <div class="rail-wrap">
           <div class="rail-head"><h2>Новое на платформе</h2><a>Смотреть все →</a></div>
-          <div class="grid" id="grid-new"></div>
+          <div class="rail" id="grid-new" style="grid-auto-columns:248px"></div>
           <div class="rail-head"><h2>Рекомендуем по теме <span class="tag">Найм и команда</span></h2><a>Вся тема →</a></div>
           <div class="rail" id="rail-topic" style="grid-auto-columns:262px"></div>
         </div>
@@ -832,7 +877,7 @@
               <div class="ref-copied" id="refCopied">Скопировано ✓</div>
             </div>
             <div class="pips-wrap">
-              <div class="lbl2"><span>До вывода деньгами</span><b>5 из 10 приглашенных</b></div>
+              <div class="lbl2"><span>Вывод деньгами · от 2 приглашенных</span><b style="color:#7ddc9c">Открыт</b></div>
               <div class="pips" id="pips"></div>
             </div>
           </div>
@@ -1067,7 +1112,7 @@
     <div class="fld"><label>Имя</label><input value="Константин"></div>
     <div class="fld"><label>Фамилия</label><input value="Волков"></div>
     <div class="fld"><label>Мессенджер для связи</label><input placeholder="@telegram / WhatsApp / номер"></div>
-    <div class="fld"><label>Сумма для вывода</label><input placeholder="0 ₽"><div class="hint">На балансе: 37 500 ₽ · вывод деньгами — от 10 приглашенных</div></div>
+    <div class="fld"><label>Сумма для вывода</label><input placeholder="0 ₽"><div class="hint">На балансе: 37 500 ₽ · вывод деньгами — от 2 приглашенных</div></div>
     <button class="btn-gold" id="loySubmit" style="width:100%;justify-content:center">Запросить</button>
     <div class="ok-msg" id="loyOk">Заявка отправлена. Все заявки обрабатываются вручную — с вами свяжутся лично в указанном мессенджере.</div>
   </div>
@@ -1080,7 +1125,7 @@
     <div class="rule"><span class="dot"></span><span><b>50%</b> с каждого платежа приглашенного участника начисляются вам в течение 6 месяцев его подписки.</span></div>
     <div class="rule"><span class="dot"></span><span>Баланс можно <b>потратить на свою подписку в Автократии</b> или вывести деньгами.</span></div>
     <div class="rule"><span class="dot"></span><span>Начисление фиксируется сразу после оплаты приглашенного и появляется на балансе через <b>14 дней</b>.</span></div>
-    <div class="rule"><span class="dot"></span><span>Вывод деньгами доступен <b>от 10 привлеченных участников</b>. Партнерам (HAVENS, CTR и др.) — сразу.</span></div>
+    <div class="rule"><span class="dot"></span><span>Вывод деньгами доступен <b>от 2 привлеченных участников</b>. Партнерам (HAVENS, CTR и др.) — сразу.</span></div>
     <div class="rule"><span class="dot"></span><span>Если подписка приглашенного прерывается более чем на <b>7 дней</b>, реферальная связь теряется — даже при возврате.</span></div>
     <div class="rule"><span class="dot"></span><span>Через 6 месяцев участия приглашенный переходит в статус «неактивен», начисления по нему завершаются.</span></div>
     <div class="rule"><span class="dot"></span><span>Все заявки на вывод обрабатываются вручную — с вами свяжутся лично.</span></div>
@@ -1248,6 +1293,7 @@ const PORTRAITS={
   ai:portrait('p-cap','#e08a8a','#a63030'),
 };
 document.getElementById('userAv').innerHTML=photoAvatar();
+document.getElementById('ppAv').innerHTML=photoAvatar();
 
 /* ===== cover ===== */
 function coverHTML(it,{partner=false,small=false}={}){
@@ -1401,6 +1447,7 @@ function card(it,{progress=null,partner=false,assign=false,fav=false}={}){
       ${progress!=null?`<div class="prog-lbl"><span>Просмотрено</span><span>${progress}%</span></div><div class="prog"><i style="width:${progress}%"></i></div>`:''}
       <div class="cmeta">
         <a class="author" data-author="${it.author}"><span class="pic">${PORTRAITS[it.author]}</span>${au.short}</a>
+        <span class="mini-rate"><svg><use href="#i-star"/></svg>${au.rating}</span>
         ${partner?'<span class="pmark">Партнер</span>':`<a class="topic" data-topic="${it.topic}">${it.topic}</a>`}
       </div>
       ${assign?'<button class="assign-btn">Назначить курс</button>':''}
@@ -1420,6 +1467,7 @@ function listItem(it,{assign=false,fav=false}={}){
       <p>${it.desc}</p>
       <div class="lt-foot">
         <a class="author" data-author="${it.author}"><span class="pic">${PORTRAITS[it.author]}</span>${AUTHORS[it.author].short}</a>
+        <span class="mini-rate"><svg><use href="#i-star"/></svg>${AUTHORS[it.author].rating}</span>
         <a class="topic" data-topic="${it.topic}">${it.topic}</a>
         ${assign?'<button class="assign-btn" style="margin-left:6px">Назначить курс</button>':''}
         <span class="lt-date">${it.date}</span>
@@ -1677,6 +1725,18 @@ cg.appendChild(card(C('p1','course','Все курсы бренда CTR в од�
   d.addEventListener('click',e=>{e.stopPropagation();document.getElementById(x.ovl).classList.add('show');});
   cg.appendChild(d);
 });
+/* канал в Telegram — ведет на синхронизацию с ТГ в профиле */
+(()=>{
+  const d=document.createElement('div');d.className='ccard';
+  d.innerHTML=`<div class="cover v-dark"><span class="badge" style="background:#2ea5df;color:#fff">TELEGRAM</span><div class="ct">Канал Автократии в Telegram</div></div>
+    <div class="cbody"><div class="cmeta"><span class="topic">Анонсы, разборы и новые материалы</span></div></div>`;
+  d.addEventListener('click',e=>{
+    e.stopPropagation();
+    document.getElementById('pf-photo').innerHTML=photoAvatar()+'<span class="ph-edit">Изменить фото</span>';
+    document.getElementById('ovl-profile').classList.add('show');
+  });
+  cg.appendChild(d);
+})();
 
 /* loyalty */
 const rr=document.getElementById('ref-rows');
@@ -1689,7 +1749,7 @@ REFS.forEach(x=>{
   rr.appendChild(tr);
 });
 const pips=document.getElementById('pips');
-for(let i=0;i<10;i++){const p=document.createElement('span');p.className='pip'+(i<5?' on':'');pips.appendChild(p);}
+for(let i=0;i<2;i++){const p=document.createElement('span');p.className='pip on';pips.appendChild(p);}
 const ovlW=document.getElementById('ovl-withdraw'),ovlI=document.getElementById('ovl-info');
 document.getElementById('loyOpenBtn').addEventListener('click',()=>ovlW.classList.add('show'));
 document.getElementById('loyInfoBtn').addEventListener('click',()=>ovlI.classList.add('show'));
